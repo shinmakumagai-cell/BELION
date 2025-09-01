@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BELION - 創造と革新のパートナー。WEB制作、クリエイティブ制作、動画制作からライフサポートまで、あなたのアイデアを現実にするプロフェッショナル集団です。">
+    <meta name="keywords" content="BELION,WEB制作,ホームページ制作,LP制作,動画制作,アニメーション,ロゴデザイン,オリジナルシャツ,ペット探し,サッカー,スマブラ">
+    <meta name="author" content="BELION">
+    
+    <!-- OGP メタタグ -->
+    <meta property="og:title" content="BELION - 創造と革新のパートナー">
+    <meta property="og:description" content="WEB制作からクリエイティブ、そして日常のサポートまで。あなたのアイデアを現実にするプロフェッショナル集団">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BELION - 創造と革新のパートナー">
+    <meta name="twitter:description" content="WEB制作からクリエイティブ、そして日常のサポートまで。あなたのアイデアを現実にするプロフェッショナル集団">
+    
+    <title>BELION - 創造と革新のパートナー</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #34495e, #95a5a6);
+            color: #ecf0f1;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ヘッダー */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            transform: translateY(-100px);
+        }
+
+        header.visible {
+            transform: translateY(0);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: #f39c12;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #f39c12;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ハンバーガーメニュー */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #ecf0f1;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+
+        .hero-content {
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ecf0f1, #bdc3c7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* サービスセクション */
+        .services {
+            padding: 100px 0;
+            background: rgba(52, 73, 94, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #ecf0f1;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .service-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .service-card:hover::before {
+            animation: shimmer 0.6s ease-in-out;
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -50%;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                left: 150%;
+                opacity: 0;
+            }
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-button {
+            padding: 10px 20px;
+            border: 2px solid #f39c12;
+            background: transparent;
+            color: #f39c12;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .detail-button:hover {
+            background: #f39c12;
+            color: white;
+        }
+
+        /* 会社概要セクション */
+        .about {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        /* お問い合わせセクション */
+        .contact {
+            padding: 100px 0;
+        }
+
+        .contact-content {
+            text-align: center;
+        }
+
+        /* フッター */
+        .footer {
+            padding: 40px 0;
+            background: #2c3e50;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* お問い合わせフォーム */
+        .contact-form-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .contact-form-overlay.active {
+            display: flex;
+        }
+
+        .contact-form {
+            background: #2c3e50;
+            padding: 3rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-header h2 {
+            color: #ecf0f1;
+            font-size: 2rem;
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            color: #ecf0f1;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover {
+            color: #e74c3c;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ecf0f1;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f39c12;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* サービス詳細ページ */
+        .service-detail {
+            display: none;
+            padding: 120px 20px 80px;
+            min-height: 100vh;
+        }
+
+        .service-detail.active {
+            display: block;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #ecf0f1;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #f39c12;
+        }
+
+        .service-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-header i {
+            font-size: 4rem;
+            color: #f39c12;
+            margin-bottom: 1rem;
+        }
+
+        .service-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-detail-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem;
+            background: rgba(231, 76, 60, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(243, 156, 18, 0.3);
+        }
+
+        .feature-item i {
+            color: #f39c12;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(44, 62, 80, 0.98);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            .service-header h1 {
+                font-size: 2rem;
+            }
+
+            .service-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* スクロールバー */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #2c3e50;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #c0392b, #e67e22);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header id="header">
+        <nav class="container">
+            <div class="logo">BELION</div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showHome()">ホーム</a></li>
+                <li><a href="#services">サービス</a></li>
+                <li><a href="#about">会社概要</a></li>
+                <li><a href="#" onclick="showContactForm()">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- メインページ -->
+    <div id="mainPage">
+        <!-- ヒーローセクション -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="logo" style="font-size: 4rem; margin-bottom: 1rem;">BELION</div>
+                <h1>創造と革新のパートナー</h1>
+                <p>WEB制作からクリエイティブ、そして日常のサポートまで<br>あなたのアイデアを現実にするプロフェッショナル集団</p>
+                <button class="cta-button" onclick="showContactForm()">お問い合わせ</button>
+            </div>
+        </section>
+
+        <!-- サービスセクション -->
+        <section class="services" id="services">
+            <div class="container">
+                <h2 class="section-title">サービス一覧</h2>
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.8;">
+                    私たちは多様なニーズにお応えする「何でも屋」です
+                </p>
+                <div class="services-grid">
+                    <div class="service-card" onclick="showServiceDetail('web')">
+                        <i class="fas fa-globe service-icon"></i>
+                        <h3>WEB制作</h3>
+                        <p>オリジナルウェブサイト、LP、ホームページ制作で<br>あなたのビジネスをオンラインで輝かせます</p>
+                        <button class="detail-button">詳細を見る</button>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetail('creative')">
+                        <i class="fas fa-palette service-icon"></i>
+                        <h3>クリエイティブ制作</h3>
+                        <p>ロゴ、名刺、ポスター、MV制作まで<br>印象的なビジュアルコンテンツをお届け</p>
+                        <button class="detail-button">詳細を見る</button>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetail('video')">
+                        <i class="fas fa-video service-icon"></i>
+                        <h3>動画・アニメーション</h3>
+                        <p>魅力的な動画制作、画像編集、アニメーションで<br>ストーリーを生き生きと表現</p>
+                        <button class="detail-button">詳細を見る</button>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetail('apparel')">
+                        <i class="fas fa-tshirt service-icon"></i>
+                        <h3>アパレル制作</h3>
+                        <p>オリジナルシャツ制作で<br>あなただけの特別なアイテムを</p>
+                        <button class="detail-button">詳細を見る</button>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetail('life')">
+                        <i class="fas fa-hands-helping service-icon"></i>
+                        <h3>ライフサポート</h3>
+                        <p>ペット探し、送迎サービス、各種サポートで<br>日常生活をより快適に</p>
+                        <button class="detail-button">詳細を見る</button>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetail('entertainment')">
+                        <i class="fas fa-gamepad service-icon"></i>
+                        <h3>エンターテインメント</h3>
+                        <p>スマブライベント、サッカー、サッカースクールで<br>楽しい時間をプロデュース</p>
+                        <button class="detail-button">詳細を見る</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 会社概要セクション -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">BELIONについて</h2>
+                <div class="about-content">
+                    <p>
+                        私たちBELIONは、クリエイティブな発想と技術力を武器に、
+                        お客様の様々なニーズにお応えする総合サービス企業です。
+                    </p>
+                    <p>
+                        WEB制作からクリエイティブデザイン、日常のサポートサービスまで、
+                        「できない」を「できる」に変える、真の意味での「何でも屋」を目指しています。
+                    </p>
+                    <p>
+                        あなたの想像を現実に変える、信頼できるパートナーとして、
+                        常にお客様と共に成長し続けます。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせセクション -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2 class="section-title">お問い合わせ</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.8;">
+                        あなたのアイデアを聞かせてください
+                    </p>
+                    <button class="cta-button" onclick="showContactForm()">お問い合わせ</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <div class="container">
+                <div class="logo" style="font-size: 1.5rem; margin-bottom: 1rem;">BELION</div>
+                <p style="opacity: 0.6;">&copy; 2025 BELION. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- サービス詳細ページ -->
+    <div class="service-detail" id="serviceDetail">
+        <div class="container">
+            <a href="#" class="back-button" onclick="showHome()">
+                <i class="fas fa-arrow-left"></i>
+                サービス詳細
+            </a>
+            
+            <div class="service-header" id="serviceHeader">
+                <!-- サービス詳細のヘッダーがここに動的に挿入されます -->
+            </div>
+            
+            <div class="service-detail-content" id="serviceContent">
+                <!-- サービス詳細のコンテンツがここに動的に挿入されます -->
+            </div>
+            
+            <div class="service-detail-content">
+                <h2 style="margin-bottom: 1rem; color: #f39c12;">特徴・強み</h2>
+                <div class="service-features" id="serviceFeatures">
+                    <!-- サービスの特徴がここに動的に挿入されます -->
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">このサービスについてお気軽にご相談ください</p>
+                <button class="cta-button" onclick="showContactForm()">お問い合わせ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- お問い合わせフォーム -->
+    <div class="contact-form-overlay" id="contactFormOverlay">
+        <form class="contact-form" id="contactForm">
+            <div class="form-header">
+                <h2>お問い合わせ</h2>
+                <button type="button" class="close-button" onclick="hideContactForm()">&times;</button>
+            </div>
+            
+            <div class="form-group">
+                <label for="name">お名前 *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">メールアドレス *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">電話番号</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="company">会社名</label>
+                <input type="text" id="company" name="company">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">お問い合わせ内容 *</label>
+                <textarea id="message" name="message" required placeholder="具体的なご要望やご質問をお聞かせください"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-button" id="submitButton">送信する</button>
+        </form>
+    </div>
+
+    <script>
+        // サービス詳細データ
+        const serviceData = {
+            web: {
+                icon: 'fas fa-globe',
+                title: 'WEB制作',
+                description: 'オリジナルウェブサイト、LP、ホームページ制作で\nあなたのビジネスをオンラインで輝かせます',
+                content: `
+                    <h2 style="margin-bottom: 1.5rem; color: #f39c12;">サービス詳細</h2>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
