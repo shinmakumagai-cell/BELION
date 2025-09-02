@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://shinmakumagai-cell.github.io/BELION/sitemap.xml
+

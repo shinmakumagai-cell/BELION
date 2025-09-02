@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BELION - 創造と革新のパートナー。WEB制作、クリエイティブ制作、動画制作からライフサポートまで、あなたのアイデアを現実にするプロフェッショナル集団です。">
-    <meta name="keywords" content="BELION,WEB制作,ホームページ制作,LP制作,動画制作,アニメーション,ロゴデザイン,オリジナルシャツ,ペット探し,サッカー,スマブラ">
+    <meta name="description" content="岩手県花巻市のBELION - WEB制作、サッカーコーチ、動画編集、画像編集、名刺・ポスター制作、CM・MV制作まで対応する何でも屋。創造と革新のパートナーとしてあなたのアイデアを現実にします。">
+    <meta name="keywords" content="岩手県花巻市,BELION,WEB制作,ホームページ制作,LP制作,サッカーコーチ,動画編集,画像編集,名刺制作,ポスター制作,CM制作,MV制作,クリエイティブ,何でも屋">
     <meta name="author" content="BELION">
     
     <!-- OGP メタタグ -->
-    <meta property="og:title" content="BELION - 創造と革新のパートナー">
-    <meta property="og:description" content="WEB制作からクリエイティブ、そして日常のサポートまで。あなたのアイデアを現実にするプロフェッショナル集団">
+    <meta property="og:title" content="BELION - 岩手県花巻市の創造と革新のパートナー">
+    <meta property="og:description" content="岩手県花巻市でWEB制作、サッカーコーチ、動画編集、画像編集から日常のサポートまで。あなたのアイデアを現実にするプロフェッショナル集団">
     <meta property="og:type" content="website">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BELION - 創造と革新のパートナー">
-    <meta name="twitter:description" content="WEB制作からクリエイティブ、そして日常のサポートまで。あなたのアイデアを現実にするプロフェッショナル集団">
+    <meta name="twitter:title" content="BELION - 岩手県花巻市の創造と革新のパートナー">
+    <meta name="twitter:description" content="岩手県花巻市でWEB制作、サッカーコーチ、動画編集、画像編集から日常のサポートまで対応">
     
-    <title>BELION - 創造と革新のパートナー</title>
+    <title>BELION - 岩手県花巻市の創造と革新のパートナー | WEB制作・サッカーコーチ・動画編集</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,10 +57,6 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             transition: all 0.3s ease;
-            transform: translateY(-100px);
-        }
-
-        header.visible {
             transform: translateY(0);
         }
 
@@ -142,12 +138,26 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop') center/cover;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.2;
         }
 
         .hero-content {
             animation: fadeInUp 1.5s ease;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -163,6 +173,17 @@
             font-size: 1.5rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+        }
+
+        .location-tag {
+            background: rgba(243, 156, 18, 0.2);
+            color: #f39c12;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+            border: 1px solid #f39c12;
         }
 
         .cta-button {
@@ -211,7 +232,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -424,7 +445,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 12px;
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -436,7 +458,8 @@
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: #f39c12;
             background: rgba(255, 255, 255, 0.15);
@@ -615,6 +638,32 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(45deg, #c0392b, #e67e22);
         }
+
+        /* 送信完了メッセージ */
+        .success-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            z-index: 11000;
+            display: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .success-message.show {
+            display: block;
+            animation: successPop 0.5s ease;
+        }
+
+        @keyframes successPop {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
     </style>
 </head>
 
@@ -643,8 +692,9 @@
         <section class="hero">
             <div class="hero-content">
                 <div class="logo" style="font-size: 4rem; margin-bottom: 1rem;">BELION</div>
+                <div class="location-tag">岩手県花巻市</div>
                 <h1>創造と革新のパートナー</h1>
-                <p>WEB制作からクリエイティブ、そして日常のサポートまで<br>あなたのアイデアを現実にするプロフェッショナル集団</p>
+                <p>WEB制作・サッカーコーチ・動画編集から日常のサポートまで<br>あなたのアイデアを現実にするプロフェッショナル集団</p>
                 <button class="cta-button" onclick="showContactForm()">お問い合わせ</button>
             </div>
         </section>
@@ -654,7 +704,7 @@
             <div class="container">
                 <h2 class="section-title">サービス一覧</h2>
                 <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.8;">
-                    私たちは多様なニーズにお応えする「何でも屋」です
+                    岩手県花巻市を拠点に、多様なニーズにお応えする「何でも屋」です
                 </p>
                 <div class="services-grid">
                     <div class="service-card" onclick="showServiceDetail('web')">
@@ -664,38 +714,38 @@
                         <button class="detail-button">詳細を見る</button>
                     </div>
                     
-                    <div class="service-card" onclick="showServiceDetail('creative')">
-                        <i class="fas fa-palette service-icon"></i>
-                        <h3>クリエイティブ制作</h3>
-                        <p>ロゴ、名刺、ポスター、MV制作まで<br>印象的なビジュアルコンテンツをお届け</p>
+                    <div class="service-card" onclick="showServiceDetail('soccer')">
+                        <i class="fas fa-futbol service-icon"></i>
+                        <h3>サッカーコーチ</h3>
+                        <p>岩手県花巻市でのサッカーコーチング<br>個人レッスンからチーム指導まで対応</p>
                         <button class="detail-button">詳細を見る</button>
                     </div>
                     
                     <div class="service-card" onclick="showServiceDetail('video')">
                         <i class="fas fa-video service-icon"></i>
-                        <h3>動画・アニメーション</h3>
-                        <p>魅力的な動画制作、画像編集、アニメーションで<br>ストーリーを生き生きと表現</p>
+                        <h3>動画編集・画像編集</h3>
+                        <p>プロフェッショナルな動画編集、画像編集で<br>あなたのコンテンツを魅力的に仕上げます</p>
                         <button class="detail-button">詳細を見る</button>
                     </div>
                     
-                    <div class="service-card" onclick="showServiceDetail('apparel')">
-                        <i class="fas fa-tshirt service-icon"></i>
-                        <h3>アパレル制作</h3>
-                        <p>オリジナルシャツ制作で<br>あなただけの特別なアイテムを</p>
+                    <div class="service-card" onclick="showServiceDetail('creative')">
+                        <i class="fas fa-palette service-icon"></i>
+                        <h3>名刺・ポスター制作</h3>
+                        <p>印象的な名刺、ポスター、ロゴデザインで<br>あなたのブランドを際立たせます</p>
+                        <button class="detail-button">詳細を見る</button>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetail('cm')">
+                        <i class="fas fa-film service-icon"></i>
+                        <h3>CM・MV制作</h3>
+                        <p>心に響くCM・MV制作で<br>あなたのメッセージを効果的に伝えます</p>
                         <button class="detail-button">詳細を見る</button>
                     </div>
                     
                     <div class="service-card" onclick="showServiceDetail('life')">
                         <i class="fas fa-hands-helping service-icon"></i>
                         <h3>ライフサポート</h3>
-                        <p>ペット探し、送迎サービス、各種サポートで<br>日常生活をより快適に</p>
-                        <button class="detail-button">詳細を見る</button>
-                    </div>
-                    
-                    <div class="service-card" onclick="showServiceDetail('entertainment')">
-                        <i class="fas fa-gamepad service-icon"></i>
-                        <h3>エンターテインメント</h3>
-                        <p>スマブライベント、サッカー、サッカースクールで<br>楽しい時間をプロデュース</p>
+                        <p>ペット探し、送迎サービス、各種サポートで<br>日常生活をより快適にお手伝い</p>
                         <button class="detail-button">詳細を見る</button>
                     </div>
                 </div>
@@ -708,16 +758,17 @@
                 <h2 class="section-title">BELIONについて</h2>
                 <div class="about-content">
                     <p>
-                        私たちBELIONは、クリエイティブな発想と技術力を武器に、
+                        私たちBELIONは、岩手県花巻市を拠点とするクリエイティブな発想と技術力を武器に、
                         お客様の様々なニーズにお応えする総合サービス企業です。
                     </p>
                     <p>
-                        WEB制作からクリエイティブデザイン、日常のサポートサービスまで、
-                        「できない」を「できる」に変える、真の意味での「何でも屋」を目指しています。
+                        WEB制作、サッカーコーチ、動画編集・画像編集、名刺・ポスター制作、CM・MV制作から
+                        日常のサポートサービスまで、「できない」を「できる」に変える、
+                        真の意味での「何でも屋」を目指しています。
                     </p>
                     <p>
-                        あなたの想像を現実に変える、信頼できるパートナーとして、
-                        常にお客様と共に成長し続けます。
+                        岩手県花巻市の皆様をはじめ、全国のお客様のアイデアを現実に変える、
+                        信頼できるパートナーとして、常にお客様と共に成長し続けます。
                     </p>
                 </div>
             </div>
@@ -729,7 +780,8 @@
                 <div class="contact-content">
                     <h2 class="section-title">お問い合わせ</h2>
                     <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.8;">
-                        あなたのアイデアを聞かせてください
+                        あなたのアイデアを聞かせてください<br>
+                        岩手県花巻市から全国対応いたします
                     </p>
                     <button class="cta-button" onclick="showContactForm()">お問い合わせ</button>
                 </div>
@@ -740,6 +792,7 @@
         <footer class="footer">
             <div class="container">
                 <div class="logo" style="font-size: 1.5rem; margin-bottom: 1rem;">BELION</div>
+                <p style="opacity: 0.8; margin-bottom: 0.5rem;">岩手県花巻市の創造と革新のパートナー</p>
                 <p style="opacity: 0.6;">&copy; 2025 BELION. All rights reserved.</p>
             </div>
         </footer>
@@ -750,7 +803,7 @@
         <div class="container">
             <a href="#" class="back-button" onclick="showHome()">
                 <i class="fas fa-arrow-left"></i>
-                サービス詳細
+                ホームに戻る
             </a>
             
             <div class="service-header" id="serviceHeader">
@@ -799,8 +852,22 @@
             </div>
             
             <div class="form-group">
-                <label for="company">会社名</label>
+                <label for="company">会社名・団体名</label>
                 <input type="text" id="company" name="company">
+            </div>
+
+            <div class="form-group">
+                <label for="service">お問い合わせのサービス</label>
+                <select id="service" name="service">
+                    <option value="">サービスを選択してください</option>
+                    <option value="web">WEB制作</option>
+                    <option value="soccer">サッカーコーチ</option>
+                    <option value="video">動画編集・画像編集</option>
+                    <option value="creative">名刺・ポスター制作</option>
+                    <option value="cm">CM・MV制作</option>
+                    <option value="life">ライフサポート</option>
+                    <option value="other">その他</option>
+                </select>
             </div>
             
             <div class="form-group">
@@ -812,13 +879,391 @@
         </form>
     </div>
 
+    <!-- 送信完了メッセージ -->
+    <div class="success-message" id="successMessage">
+        <i class="fas fa-check-circle" style="font-size: 3rem; color: white; margin-bottom: 1rem;"></i>
+        <h3>お問い合わせありがとうございます！</h3>
+        <p>内容を確認次第、担当者よりご連絡いたします。</p>
+    </div>
+
     <script>
         // サービス詳細データ
         const serviceData = {
             web: {
                 icon: 'fas fa-globe',
                 title: 'WEB制作',
-                description: 'オリジナルウェブサイト、LP、ホームページ制作で\nあなたのビジネスをオンラインで輝かせます',
+                description: '岩手県花巻市でプロフェッショナルなWEB制作サービスを提供',
                 content: `
                     <h2 style="margin-bottom: 1.5rem; color: #f39c12;">サービス詳細</h2>
                     <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        BELIONでは、岩手県花巻市を拠点に、お客様のビジネスを成功に導くためのWEBサイト制作を行っています。
+                        単なるホームページ制作ではなく、お客様の目標達成をサポートする戦略的なWEBソリューションを提供いたします。
+                    </p>
+                    <h3 style="color: #f39c12; margin: 2rem 0 1rem;">提供サービス</h3>
+                    <ul style="line-height: 1.8; margin-left: 2rem;">
+                        <li>コーポレートサイト制作</li>
+                        <li>ランディングページ（LP）制作</li>
+                        <li>ECサイト構築</li>
+                        <li>WordPress構築・カスタマイズ</li>
+                        <li>レスポンシブデザイン対応</li>
+                        <li>SEO対策</li>
+                        <li>サイト保守・運用</li>
+                    </ul>
+                `,
+                features: [
+                    { icon: 'fas fa-mobile-alt', text: 'レスポンシブデザイン完全対応' },
+                    { icon: 'fas fa-search', text: 'SEO対策を標準装備' },
+                    { icon: 'fas fa-rocket', text: '高速表示・パフォーマンス重視' },
+                    { icon: 'fas fa-shield-alt', text: 'セキュリティ対策万全' },
+                    { icon: 'fas fa-headset', text: '制作後のサポート体制充実' },
+                    { icon: 'fas fa-chart-line', text: 'アクセス解析・改善提案' }
+                ]
+            },
+            soccer: {
+                icon: 'fas fa-futbol',
+                title: 'サッカーコーチ',
+                description: '岩手県花巻市でのプロフェッショナルサッカーコーチング',
+                content: `
+                    <h2 style="margin-bottom: 1.5rem; color: #f39c12;">サービス詳細</h2>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        岩手県花巻市でサッカーの技術向上とスポーツの楽しさを伝えるコーチングサービスを提供しています。
+                        初心者から上級者まで、個人のレベルに合わせた丁寧な指導で、サッカーの魅力を最大限に引き出します。
+                    </p>
+                    <h3 style="color: #f39c12; margin: 2rem 0 1rem;">指導内容</h3>
+                    <ul style="line-height: 1.8; margin-left: 2rem;">
+                        <li>個人技術指導（ドリブル、パス、シュート）</li>
+                        <li>戦術理解・ポジショニング</li>
+                        <li>フィジカルトレーニング</li>
+                        <li>メンタルコーチング</li>
+                        <li>チーム戦術指導</li>
+                        <li>試合分析・改善アドバイス</li>
+                    </ul>
+                    <h3 style="color: #f39c12; margin: 2rem 0 1rem;">対象者</h3>
+                    <ul style="line-height: 1.8; margin-left: 2rem;">
+                        <li>幼児〜小学生（基礎技術習得）</li>
+                        <li>中学生・高校生（競技力向上）</li>
+                        <li>大人（趣味・健康維持）</li>
+                        <li>チーム単位での指導</li>
+                    </ul>
+                `,
+                features: [
+                    { icon: 'fas fa-user', text: '個人レッスン対応' },
+                    { icon: 'fas fa-users', text: 'チーム指導も可能' },
+                    { icon: 'fas fa-calendar-alt', text: '柔軟なスケジュール調整' },
+                    { icon: 'fas fa-map-marker-alt', text: '岩手県花巻市内出張可能' },
+                    { icon: 'fas fa-trophy', text: '競技経験豊富なコーチ' },
+                    { icon: 'fas fa-heart', text: 'サッカーの楽しさを重視' }
+                ]
+            },
+            video: {
+                icon: 'fas fa-video',
+                title: '動画編集・画像編集',
+                description: 'プロ品質の動画編集・画像編集サービス',
+                content: `
+                    <h2 style="margin-bottom: 1.5rem; color: #f39c12;">サービス詳細</h2>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        岩手県花巻市から全国のお客様に、プロフェッショナルな動画編集・画像編集サービスを提供しています。
+                        YouTube動画、企業プロモーション、SNS用コンテンツまで、あらゆるニーズにお応えします。
+                    </p>
+                    <h3 style="color: #f39c12; margin: 2rem 0 1rem;">動画編集サービス</h3>
+                    <ul style="line-height: 1.8; margin-left: 2rem;">
+                        <li>YouTube動画編集</li>
+                        <li>企業プロモーション動画</li>
+                        <li>SNS用ショート動画</li>
+                        <li>イベント・結婚式動画</li>
+                        <li>教育・研修用動画</li>
+                        <li>アニメーション制作</li>
+                    </ul>
+                    <h3 style="color: #f39c12; margin: 2rem 0 1rem;">画像編集サービス</h3>
+                    <ul style="line-height: 1.8; margin-left: 2rem;">
+                        <li>写真レタッチ・補正</li>
+                        <li>商品画像編集</li>
+                        <li>バナー・サムネイル制作</li>
+                        <li>合成・加工</li>
+                        <li>色調補正・美肌加工</li>
+                        <li>背景除去・切り抜き</li>
+                    </ul>
+                `,
+                features: [
+                    { icon: 'fas fa-magic', text: 'プロ仕様の編集ソフト使用' },
+                    { icon: 'fas fa-clock', text: 'スピード納期対応可能' },
+                    { icon: 'fas fa-eye', text: '高品質な仕上がり保証' },
+                    { icon: 'fas fa-redo', text: '修正回数無制限' },
+                    { icon: 'fas fa-cloud-upload-alt', text: 'オンライン完結' },
+                    { icon: 'fas fa-dollar-sign', text: 'リーズナブルな価格設定' }
+                ]
+            },
+            creative: {
+                icon: 'fas fa-palette',
+                title: '名刺・ポスター制作',
+                description: '印象的なデザインで差をつける名刺・ポスター制作',
+                content: `
+                    <h2 style="margin-bottom: 1.5rem; color: #f39c12;">サービス詳細</h2>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        岩手県花巻市を拠点に、お客様のビジネスやイベントを印象的に表現する
+                        デザイン制作サービスを提供しています。一枚一枚に込められた想いを、
+                        美しいデザインで形にいたします。
+                    </p>
+                    <h3 style="color: #f39c12; margin: 2rem 0 1rem;">制作サービス</h3>
+                    <ul style="line-height: 1.8; margin-left: 2rem;">
+                        <li>名刺デザイン・制作</li>
+                        <li>ポスター・チラシデザイン</li>
+                        <li>ロゴデザイン</li>
+                        <li>パンフレット・カタログ</li>
+                        <li>ショップカード</li>
+                        <li>イベントフライヤー</li>
+                        <li>看板・サインデザイン</li>
+                    </ul>
+                    <h3 style="color: #f39c12; margin: 2rem 0 1rem;">デザインの特徴</h3>
+                    <ul style="line-height: 1.8; margin-left: 2rem;">
+                        <li>お客様のブランドイメージを重視</li>
+                        <li>ターゲット層を意識したデザイン</li>
+                        <li>印刷品質を考慮した制作</li>
+                        <li>トレンドを取り入れたモダンなデザイン</li>
+                    </ul>
+                `,
+                features: [
+                    { icon: 'fas fa-paint-brush', text: 'オリジナルデザイン制作' },
+                    { icon: 'fas fa-print', text: '印刷まで一貫対応' },
+                    { icon: 'fas fa-sync', text: '何度でも修正可能' },
+                    { icon: 'fas fa-shipping-fast', text: 'スピード納期対応' },
+                    { icon: 'fas fa-palette', text: '豊富なデザイン実績' },
+                    { icon: 'fas fa-handshake', text: '丁寧なヒアリング' }
+                ]
+            },
+            cm: {
+                icon: 'fas fa-film',
+                title: 'CM・MV制作',
+                description: '心に響くCM・MV制作で効果的な映像コンテンツを',
+                content: `
+                    <h2 style="margin-bottom: 1.5rem; color: #f39c12;">サービス詳細</h2>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        岩手県花巻市から全国へ、お客様のメッセージを効果的に伝える
+                        CM・MV制作サービスを提供しています。企画から撮影、編集まで
+                        ワンストップでお任せいただけます。
+                    </p>
+                    <h3 style="color: #f39c12; margin: 2rem 0 1rem;">制作サービス</h3>
+                    <ul style="line-height: 1.8; margin-left: 2rem;">
+                        <li>テレビCM制作</li>
+                        <li>WEB用CM制作</li>
+                        <li>ミュージックビデオ制作</li>
+                        <li>企業プロモーション動画</li>
+                        <li>商品紹介動画</li>
+                        <li>イベント記録動画</li>
+                        <li>ドキュメンタリー制作</li>
+                    </ul>
+                    <h3 style="color: #f39c12; margin: 2rem 0 1rem;">制作フロー</h3>
+                    <ol style="line-height: 1.8; margin-left: 2rem;">
+                        <li>企画・構成提案</li>
+                        <li>絵コンテ・台本作成</li>
+                        <li>キャスティング・ロケハン</li>
+                        <li>撮影</li>
+                        <li>編集・音響</li>
+                        <li>完成・納品</li>
+                    </ol>
+                `,
+                features: [
+                    { icon: 'fas fa-lightbulb', text: '企画提案から対応' },
+                    { icon: 'fas fa-video', text: '4K撮影対応' },
+                    { icon: 'fas fa-music', text: '音響・BGMも完璧' },
+                    { icon: 'fas fa-users', text: 'キャスティング手配可能' },
+                    { icon: 'fas fa-map-marker-alt', text: '全国ロケ対応' },
+                    { icon: 'fas fa-award', text: '受賞歴ありの実績' }
+                ]
+            },
+            life: {
+                icon: 'fas fa-hands-helping',
+                title: 'ライフサポート',
+                description: '日常生活をサポートする各種サービス',
+                content: `
+                    <h2 style="margin-bottom: 1.5rem; color: #f39c12;">サービス詳細</h2>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        岩手県花巻市の皆様の日常生活をより快適にするための
+                        様々なサポートサービスを提供しています。
+                        「困った」ときの頼れるパートナーとして、
+                        幅広いニーズにお応えいたします。
+                    </p>
+                    <h3 style="color: #f39c12; margin: 2rem 0 1rem;">提供サービス</h3>
+                    <ul style="line-height: 1.8; margin-left: 2rem;">
+                        <li>ペット探しサポート</li>
+                        <li>送迎サービス</li>
+                        <li>買い物代行</li>
+                        <li>家事代行</li>
+                        <li>イベント設営・運営</li>
+                        <li>引っ越しサポート</li>
+                        <li>高齢者見守りサービス</li>
+                        <li>各種手続き代行</li>
+                    </ul>
+                    <h3 style="color: #f39c12; margin: 2rem 0 1rem;">特に力を入れているサービス</h3>
+                    <p style="line-height: 1.8;">
+                        <strong>ペット探しサポート：</strong>
+                        大切な家族であるペットが行方不明になった際の捜索サポートを行っています。
+                        SNSでの拡散、ポスター制作・掲示、近隣への聞き込みなど、
+                        あらゆる手段を駆使して捜索をお手伝いいたします。
+                    </p>
+                `,
+                features: [
+                    { icon: 'fas fa-heart', text: '真心を込めたサポート' },
+                    { icon: 'fas fa-phone', text: '24時間対応可能' },
+                    { icon: 'fas fa-shield-alt', text: '安心・安全の保証' },
+                    { icon: 'fas fa-money-bill-wave', text: '明確な料金体系' },
+                    { icon: 'fas fa-handshake', text: '信頼関係を重視' },
+                    { icon: 'fas fa-smile', text: 'お客様満足度重視' }
+                ]
+            }
+        };
+
+        // DOM要素
+        const mainPage = document.getElementById('mainPage');
+        const serviceDetail = document.getElementById('serviceDetail');
+        const contactFormOverlay = document.getElementById('contactFormOverlay');
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        // ページ表示制御
+        function showHome() {
+            mainPage.style.display = 'block';
+            serviceDetail.classList.remove('active');
+            window.scrollTo(0, 0);
+        }
+
+        function showServiceDetail(serviceKey) {
+            const service = serviceData[serviceKey];
+            if (!service) return;
+
+            // ヘッダー設定
+            document.getElementById('serviceHeader').innerHTML = `
+                <i class="${service.icon}"></i>
+                <h1>${service.title}</h1>
+                <p>${service.description}</p>
+            `;
+
+            // コンテンツ設定
+            document.getElementById('serviceContent').innerHTML = service.content;
+
+            // 特徴設定
+            const featuresHtml = service.features.map(feature => `
+                <div class="feature-item">
+                    <i class="${feature.icon}"></i>
+                    <span>${feature.text}</span>
+                </div>
+            `).join('');
+            document.getElementById('serviceFeatures').innerHTML = featuresHtml;
+
+            // ページ切り替え
+            mainPage.style.display = 'none';
+            serviceDetail.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        // お問い合わせフォーム
+        function showContactForm() {
+            contactFormOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideContactForm() {
+            contactFormOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // フォーム送信処理
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitButton = document.getElementById('submitButton');
+            submitButton.disabled = true;
+            submitButton.textContent = '送信中...';
+
+            // フォームデータを取得
+            const formData = new FormData(contactForm);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+
+            // 実際の送信処理（ここでは模擬）
+            setTimeout(() => {
+                hideContactForm();
+                showSuccessMessage();
+                contactForm.reset();
+                submitButton.disabled = false;
+                submitButton.textContent = '送信する';
+            }, 1500);
+        });
+
+        function showSuccessMessage() {
+            successMessage.classList.add('show');
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 3000);
+        }
+
+        // ハンバーガーメニュー
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // サービスカードアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // フォームオーバーレイクリックで閉じる
+        contactFormOverlay.addEventListener('click', function(e) {
+            if (e.target === contactFormOverlay) {
+                hideContactForm();
+            }
+        });
+
+        // ESCキーでフォーム閉じる
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && contactFormOverlay.classList.contains('active')) {
+                hideContactForm();
+            }
+        });
+
+        // 初期化
+        window.addEventListener('load', function() {
+            // アニメーションの遅延実行
+            setTimeout(() => {
+                document.querySelectorAll('.service-card').forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.transitionDelay = `${index * 0.1}s`;
+                    }, 100);
+                });
+            }, 500);
+        });
+    </script>
+</body>
+</html>
